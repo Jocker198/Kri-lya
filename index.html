@@ -1,319 +1,132 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>كري ليا — كري سيارتك في المغرب</title>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>كري ليا — كراء السيارات بدون التزامات</title>
   <style>
-    :root {
-      --primary: #2A5B87;
-      --primary-dark: #1e4a75;
-      --secondary: #28a745;
-      --light: #f8f9fa;
-      --gray: #6c757d;
-      --border: #e9ecef;
-    }
-    * {
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f7fa;
+      color: #333;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Tajawal', sans-serif;
-      background-color: var(--light);
-      color: #333;
       line-height: 1.6;
     }
     .container {
-      width: 100%;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 20px;
     }
-    /* Header */
     header {
-      background: white;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 0;
-    }
-    .logo {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: var(--primary);
-      text-decoration: none;
-    }
-    .logo-sub {
-      font-size: 0.9rem;
-      color: var(--gray);
-      display: block;
-      margin-top: -5px;
-    }
-    .search-bar {
-      flex: 1;
-      max-width: 600px;
-      margin: 0 30px;
-    }
-    .search-group {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .search-input {
-      flex: 1;
-      min-width: 180px;
-      padding: 14px 16px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      font-family: 'Tajawal', sans-serif;
-      font-size: 1rem;
-    }
-    .search-btn {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 0 24px;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: background 0.3s;
-    }
-    .search-btn:hover {
-      background: var(--primary-dark);
-    }
-    .btn-host {
-      background: #f8f9fa;
-      color: var(--primary);
-      border: 1px solid var(--primary);
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: all 0.3s;
-    }
-    .btn-host:hover {
-      background: #e9ecef;
-    }
-
-    /* Hero Section */
-    .hero {
       text-align: center;
       padding: 60px 20px;
-      background: linear-gradient(135deg, #f0f5ff 0%, #e6f0fa 100%);
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+      border-radius: 12px;
       margin-bottom: 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    .hero h1 {
+    .logo {
       font-size: 2.8rem;
-      color: var(--primary);
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      color: #555;
-      max-width: 700px;
-      margin: 0 auto 30px;
-    }
-    .promo-banner {
-      background: #28a745;
-      color: white;
-      padding: 12px;
-      border-radius: 8px;
       font-weight: bold;
-      display: inline-block;
-      margin-top: 15px;
+      margin-bottom: 10px;
+      color: #FFD700;
     }
-
-    /* Listings */
-    .section-title {
-      font-size: 1.8rem;
-      color: var(--primary);
-      margin: 40px 0 25px;
-      text-align: center;
-    }
-    .listings {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 25px;
-      margin-bottom: 50px;
-    }
-    .listing-card {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      transition: transform 0.3s;
-    }
-    .listing-card:hover {
-      transform: translateY(-5px);
-    }
-    .listing-img {
-      height: 180px;
-      background: linear-gradient(135deg, #2A5B87 0%, #1e4a75 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 2.5rem;
-    }
-    .listing-content {
-      padding: 20px;
-    }
-    .listing-title {
-      font-size: 1.3rem;
-      margin-bottom: 8px;
-      color: #222;
-    }
-    .listing-location {
-      color: var(--gray);
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .listing-price {
+    .tagline {
       font-size: 1.4rem;
-      font-weight: bold;
-      color: var(--primary);
-      margin: 10px 0;
+      margin-bottom: 30px;
+      opacity: 0.9;
     }
-    .listing-features {
+    .cta-buttons {
       display: flex;
-      justify-content: space-between;
-      color: var(--gray);
-      font-size: 0.9rem;
-      margin: 15px 0;
-    }
-    .btn-contact {
-      background: var(--secondary);
-      color: white;
-      border: none;
-      width: 100%;
-      padding: 14px;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 1.05rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
       justify-content: center;
-      gap: 8px;
-      transition: background 0.3s;
+      gap: 20px;
+      flex-wrap: wrap;
     }
-    .btn-contact:hover {
-      background: #218838;
-    }
-
-    /* Modals */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 2000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.6);
-      padding: 20px;
-    }
-    .modal-content {
-      background: white;
-      margin: 40px auto;
-      padding: 30px;
-      border-radius: 12px;
-      max-width: 750px;
-      max-height: 85vh;
-      overflow-y: auto;
-    }
-    .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-      padding-bottom: 15px;
-      border-bottom: 1px solid var(--border);
-    }
-    .close {
-      font-size: 1.8rem;
-      font-weight: bold;
-      cursor: pointer;
-      color: #aaa;
-      transition: color 0.3s;
-    }
-    .close:hover {
-      color: var(--primary);
-    }
-    .terms-content {
-      font-size: 1rem;
-      line-height: 1.8;
-    }
-    .terms-content h3 {
-      color: var(--primary);
-      margin: 20px 0 12px;
-    }
-    .terms-content ul {
-      padding-right: 25px;
-      margin: 10px 0;
-    }
-    .terms-content li {
-      margin-bottom: 8px;
-    }
-    .checkbox-group {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      margin: 25px 0;
-      padding: 15px;
-      background: #f8fbff;
-      border-radius: 8px;
-      border: 1px solid #dfe6f1;
-    }
-    .checkbox-group input {
-      margin-top: 4px;
-    }
-    .btn-accept {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 16px 30px;
+    .btn {
+      padding: 14px 32px;
       font-size: 1.1rem;
-      font-weight: bold;
-      border-radius: 8px;
+      border: none;
+      border-radius: 50px;
       cursor: pointer;
-      width: 100%;
-      transition: background 0.3s;
+      font-weight: bold;
+      transition: all 0.3s ease;
     }
-    .btn-accept:disabled {
-      background: #adb5bd;
-      cursor: not-allowed;
+    .btn-primary {
+      background: #FFD700;
+      color: #1e3c72;
     }
-    .btn-accept.enabled {
-      background: var(--secondary);
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
     }
-    .btn-accept.enabled:hover {
-      background: #218838;
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     }
-
+    .features {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 50px;
+    }
+    .feature-card {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      width: 280px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    }
+    .feature-icon {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: #2a5298;
+    }
     footer {
       text-align: center;
-      padding: 30px 0;
-      color: #777;
-      font-size: 0.95rem;
-      border-top: 1px solid #eee;
-      margin-top: 40px;
+      padding: 30px;
+      margin-top: 60px;
+      color: #666;
+      font-size: 0.9rem;
     }
-    .legal-notice {
-      background: #fff8e6;
-      padding: 15px;
-      margin-top: 20px;
-      border-radius: 8px;
-      font-size
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">كـري لـيـا</div>
+      <p class="tagline">منصة مغربية لكراء السيارات — بدون التزامات، عمولة رمزية فقط</p>
+      <div class="cta-buttons">
+        <button class="btn btn-primary">أضف سيارتك الآن</button>
+        <button class="btn btn-secondary">ابحث عن سيارة</button>
+      </div>
+    </header>
+
+    <section class="features">
+      <div class="feature-card">
+        <div class="feature-icon">🔑</div>
+        <h3>بدون التزامات</h3>
+        <p>لا عقود معقدة، ولا شروط ملزمة. أنت حر في الإلغاء أو التغيير.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💰</div>
+        <h3>عمولة رمزية</h3>
+        <p>نأخذ فقط رسوم وسيط معقولة — باقي المبلغ يذهب مباشرة للمالك.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📍</div>
+        <h3>تغطية مغربية</h3>
+        <p>الدار البيضاء، الرباط، فاس، مراكش... ندعم جميع المدن الكبرى.</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 كري ليا — منصة وسيطة بحتة. جميع العقود تتم مباشرة بين الطرفين.</p>
+    </footer>
+  </div>
+</body>
+</html>
