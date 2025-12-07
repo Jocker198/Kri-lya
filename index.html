@@ -19,7 +19,7 @@
       overflow-x: hidden;
     }
 
-    /* نقوش الزليج كخلفية شبه شفافة */
+    /* نقوش الزليج */
     body::before {
       content: "";
       position: fixed;
@@ -48,10 +48,26 @@
       padding: 20px;
     }
 
-    .avatar {
-      font-size: 6rem;
+    .avatar-container {
+      width: 200px;
+      height: 300px;
       margin-bottom: 20px;
-      transition: transform 0.5s ease;
+      position: relative;
+    }
+
+    .avatar {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      opacity: 1;
+      transition: opacity 0.6s ease;
+    }
+
+    .avatar.hidden {
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
     .question-mark {
@@ -189,11 +205,6 @@
       box-shadow: 0 0 25px rgba(212, 175, 55, 0.7);
     }
 
-    .wheel-btn i {
-      font-size: 1.4rem;
-      margin-bottom: 6px;
-    }
-
     footer {
       padding: 30px;
       text-align: center;
@@ -203,22 +214,116 @@
       margin-top: 20px;
     }
 
+    /* === نماذج منبثقة === */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .popup {
+      background: #0a0a0a;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 16px;
+      border: 2px solid #D4AF37;
+      padding: 30px;
+      position: relative;
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+    }
+
+    .popup h3 {
+      color: #D4AF37;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-size: 1.8rem;
+      color: #D4AF37;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px;
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 8px;
+      color: white;
+      font-family: 'Tajawal', sans-serif;
+      font-size: 1rem;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: 2px solid #D4AF37;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: #D4AF37;
+      color: #000;
+      font-weight: bold;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .submit-btn:hover {
+      background: #FFD700;
+    }
+
     @media (max-width: 600px) {
-      .wheel-btn {
-        width: 130px;
-        height: 130px;
-        font-size: 0.95rem;
-      }
-      .wheels { gap: 25px; }
-      .window { width: 250px; height: 160px; }
-      .avatar { font-size: 4.5rem; }
+      .avatar-container { width: 150px; height: 225px; }
+      .wheel-btn { width: 130px; height: 130px; font-size: 0.95rem; }
+      .popup { padding: 20px; }
+      .popup h3 { font-size: 1.5rem; }
     }
   </style>
 </head>
 <body>
 
   <section class="story-section">
-    <div class="avatar" id="avatar">🤔</div>
+    <div class="avatar-container">
+      <img src="https://i.ibb.co/6n1jV0c/avatar-pensive.png" alt="شخص يبحث" class="avatar" id="avatar1">
+      <img src="https://i.ibb.co/7gRz7G4/avatar-smiling.png" alt="شخص سعيد" class="avatar hidden" id="avatar2">
+    </div>
     <div class="question-mark">؟</div>
     <div class="window" id="window">
       <h2>كري ليا</h2>
@@ -231,11 +336,11 @@
   <section class="actions">
     <h2>الآن، سوق السيارات أصبح أبسط</h2>
     <div class="wheels">
-      <div class="wheel-btn" onclick="alert('سيتم فتح نموذج إضافة السيارة قريباً!')">
+      <div class="wheel-btn" onclick="openPopup('add')">
         <div>➕</div>
         أضف<br>سيارتك
       </div>
-      <div class="wheel-btn" onclick="alert('سيتم فتح نموذج البحث عن كراء قريباً!')">
+      <div class="wheel-btn" onclick="openPopup('rent')">
         <div>🔍</div>
         ابحث عن<br>سيارة للكراء
       </div>
@@ -246,21 +351,203 @@
     وسيطك الموثوق في سوق السيارات — المغرب 🇲🇦
   </footer>
 
+  <!-- نموذج البيع -->
+  <div class="overlay" id="sellPopup">
+    <div class="popup">
+      <button class="close-btn" onclick="closePopup('sell')">&times;</button>
+      <h3>أضف سيارتك للبيع</h3>
+      <form id="sellForm">
+        <div class="form-group">
+          <label>نوع السيارة</label>
+          <select name="type" required>
+            <option value="">اختر النوع</option>
+            <option value="سيدان">سيدان</option>
+            <option value="SUV">SUV</option>
+            <option value="بيك آب">بيك آب</option>
+            <option value="ميني فان">ميني فان</option>
+            <option value="دراجة">دراجة نارية</option>
+            <option value="أخرى">أخرى</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>الموديل (مثال: Dacia Logan)</label>
+          <input type="text" name="model" placeholder="أدخل الموديل" required>
+        </div>
+        <div class="form-group">
+          <label>السنة</label>
+          <select name="year" required>
+            <option value="">اختر السنة</option>
+            <script>
+              for (let y = 2025; y >= 1990; y--) {
+                document.write(`<option value="${y}">${y}</option>`);
+              }
+            </script>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>الكيلومترات</label>
+          <input type="number" name="km" placeholder="مثال: 85000" min="0" required>
+        </div>
+        <div class="form-group">
+          <label>المدينة</label>
+          <select name="city" required>
+            <option value="">اختر المدينة</option>
+            <option value="الدار البيضاء">الدار البيضاء</option>
+            <option value="الرباط">الرباط</option>
+            <option value="فاس">فاس</option>
+            <option value="مراكش">مراكش</option>
+            <option value="أكادير">أكادير</option>
+            <option value="طنجة">طنجة</option>
+            <option value="وجدة">وجدة</option>
+            <option value="آسفي">آسفي</option>
+            <option value="المحمدية">المحمدية</option>
+            <option value="القنيطرة">القنيطرة</option>
+            <option value="سطات">سطات</option>
+            <option value="أخرى">أخرى</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>رقم الهاتف (يبدأ بـ 06 أو 07)</label>
+          <input type="tel" name="phone" placeholder="0612345678" pattern="0[67][0-9]{8}" required>
+        </div>
+        <button type="submit" class="submit-btn">إرسال الطلب</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- نموذج الكراء -->
+  <div class="overlay" id="rentPopup">
+    <div class="popup">
+      <button class="close-btn" onclick="closePopup('rent')">&times;</button>
+      <h3>ابحث عن سيارة للكراء</h3>
+      <form id="rentForm">
+        <div class="form-group">
+          <label>نوع السيارة المطلوبة</label>
+          <select name="type" required>
+            <option value="">اختر النوع</option>
+            <option value="اقتصادية">اقتصادية</option>
+            <option value="سيدان">سيدان</option>
+            <option value="SUV">SUV</option>
+            <option value="فاخرة">فاخرة</option>
+            <option value="دراجة">دراجة نارية</option>
+            <option value="أخرى">أخرى</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>الميزانية الشهرية (درهم)</label>
+          <select name="budget" required>
+            <option value="">اختر الميزانية</option>
+            <option value="1000-2000">1000 – 2000</option>
+            <option value="2000-3500">2000 – 3500</option>
+            <option value="3500-5000">3500 – 5000</option>
+            <option value="5000-7000">5000 – 7000</option>
+            <option value="7000+">أكثر من 7000</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>المدينة</label>
+          <select name="city" required>
+            <option value="">اختر المدينة</option>
+            <option value="الدار البيضاء">الدار البيضاء</option>
+            <option value="الرباط">الرباط</option>
+            <option value="فاس">فاس</option>
+            <option value="مراكش">مراكش</option>
+            <option value="أكادير">أكادير</option>
+            <option value="طنجة">طنجة</option>
+            <option value="وجدة">وجدة</option>
+            <option value="آسفي">آسفي</option>
+            <option value="المحمدية">المحمدية</option>
+            <option value="القنيطرة">القنيطرة</option>
+            <option value="سطات">سطات</option>
+            <option value="أخرى">أخرى</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>مدة الكراء</label>
+          <select name="duration" required>
+            <option value="">اختر المدة</option>
+            <option value="1 شهر">1 شهر</option>
+            <option value="3 أشهر">3 أشهر</option>
+            <option value="6 أشهر">6 أشهر</option>
+            <option value="سنة">سنة</option>
+            <option value="أكثر">أكثر من سنة</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>رقم الهاتف</label>
+          <input type="tel" name="phone" placeholder="0612345678" pattern="0[67][0-9]{8}" required>
+        </div>
+        <button type="submit" class="submit-btn">أرسل طلبك</button>
+      </form>
+    </div>
+  </div>
+
   <script>
     const windowEl = document.getElementById('window');
     const garageEl = document.getElementById('garage');
-    const avatarEl = document.getElementById('avatar');
+    const avatar1 = document.getElementById('avatar1');
+    const avatar2 = document.getElementById('avatar2');
 
     windowEl.addEventListener('click', () => {
       garageEl.classList.add('active');
-      avatarEl.textContent = '😊';
-      avatarEl.style.transform = 'scale(1.1)';
-      
-      // منع التكرار بعد الضغط الأول
+      avatar1.classList.add('hidden');
+      avatar2.classList.remove('hidden');
       windowEl.style.pointerEvents = 'none';
       windowEl.style.opacity = '0.8';
+    });
+
+    function openPopup(type) {
+      document.getElementById(type + 'Popup').classList.add('active');
+      document.body.style.overflow = 'hidden'; // منع التمرير عند فتح النموذج
+    }
+
+    function closePopup(type) {
+      document.getElementById(type + 'Popup').classList.remove('active');
+      document.body.style.overflow = ''; // إعادة التمرير
+    }
+
+    // إغلاق النموذج بالنقر خارجه
+    document.querySelectorAll('.overlay').forEach(overlay => {
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+          overlay.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+
+    // معالجة الإرسال
+    document.getElementById('sellForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = new FormData(this);
+      let msg = `مرحبًا بكم في كري ليا 🌟\nأرغب في إضافة سيارتي للكراء:\n`;
+      msg += `• النوع: ${data.get('type')}\n`;
+      msg += `• الموديل: ${data.get('model')}\n`;
+      msg += `• السنة: ${data.get('year')}\n`;
+      msg += `• الكيلومترات: ${data.get('km')}\n`;
+      msg += `• المدينة: ${data.get('city')}\n`;
+      msg += `• الهاتف: ${data.get('phone')}`;
+      
+      const encoded = encodeURIComponent(msg);
+      window.open(`https://wa.me/212698499814?text=${encoded}`, '_blank');
+      closePopup('sell');
+    });
+
+    document.getElementById('rentForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const data = new FormData(this);
+      let msg = `مرحبًا بكم في كري ليا 🌟\nأبحث عن سيارة للكراء:\n`;
+      msg += `• النوع: ${data.get('type')}\n`;
+      msg += `• الميزانية: ${data.get('budget')} درهم/شهر\n`;
+      msg += `• المدينة: ${data.get('city')}\n`;
+      msg += `• المدة: ${data.get('duration')}\n`;
+      msg += `• الهاتف: ${data.get('phone')}`;
+      
+      const encoded = encodeURIComponent(msg);
+      window.open(`https://wa.me/212698499814?text=${encoded}`, '_blank');
+      closePopup('rent');
     });
   </script>
 
 </body>
-    </html>
+</html>
