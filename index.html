@@ -3,108 +3,119 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>كري ليا — وساطة كراء السيارات في المغرب</title>
+  <title>كري ليا</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, sans-serif; }
-    body { background: #f8f9fa; padding: 15px; }
-    .container { max-width: 600px; margin: 0 auto; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-    header { background: #0056b3; color: white; padding: 20px; text-align: center; }
-    h1 { font-size: 1.6em; margin-bottom: 8px; }
-    .subtitle { font-size: 0.9em; opacity: 0.9; }
-    .note { background: #e3f2fd; padding: 15px; font-size: 0.9em; color: #0d47a1; border-right: 4px solid #2196f3; margin: 15px; border-radius: 6px; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+    body { background: #f5f7fa; padding: 15px; }
+    .container { max-width: 500px; margin: 20px auto; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+    header { background: #0d47a1; color: white; text-align: center; padding: 25px 20px; }
+    .logo { font-size: 2.2em; margin-bottom: 8px; }
+    h1 { font-size: 1.5em; font-weight: 600; }
+    .subtitle { font-size: 0.95em; opacity: 0.9; margin-top: 6px; }
+    
+    .note-box { background: #e8f5e9; border-right: 4px solid #4caf50; padding: 14px; margin: 15px; border-radius: 8px; font-size: 0.9em; color: #2e7d32; }
+    
     form { padding: 20px; }
-    label { display: block; margin: 12px 0 6px; font-weight: bold; color: #333; }
-    input, select, textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; }
-    button { width: 100%; background: #2e7d32; color: white; border: none; padding: 14px; font-size: 1.1em; border-radius: 6px; margin-top: 10px; cursor: pointer; }
-    button:hover { background: #1b5e20; }
-    .success { display: none; text-align: center; padding: 20px; color: #2e7d32; font-weight: bold; }
-    .footer { text-align: center; padding: 15px; font-size: 0.85em; color: #666; background: #f1f8e9; }
-    .footer a { color: #0056b3; text-decoration: none; }
+    .form-group { margin-bottom: 16px; }
+    label { display: block; margin-bottom: 6px; font-weight: 600; color: #333; }
+    input, select, textarea { width: 100%; padding: 13px; border: 1px solid #ddd; border-radius: 10px; font-size: 1em; background: #fafafa; }
+    input:focus, select:focus { outline: none; border-color: #2196f3; background: white; }
+    
+    button { width: 100%; background: #0d47a1; color: white; border: none; padding: 15px; font-size: 1.1em; border-radius: 12px; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+    button:hover { background: #0a3a7a; transform: translateY(-2px); }
+    
+    .success { display: none; text-align: center; padding: 30px; color: #2e7d32; }
+    .success i { font-size: 3em; margin-bottom: 15px; }
+    
+    footer { text-align: center; padding: 15px; font-size: 0.8em; color: #777; background: #f8f9fa; border-top: 1px solid #eee; }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>🚗 كري ليا</h1>
-      <div class="subtitle">وساطة كراء السيارات في المغرب — بدون التزامات</div>
+      <div class="logo">🚗🤝</div>
+      <h1>كري ليا</h1>
+      <div class="subtitle">كرّي سيارتك بثقة — في المغرب</div>
     </header>
 
-    <div class="note">
-      ⚠️ <strong>ملاحظة مهمة:</strong> الصور لا تُرفق هنا. بعد إدخال العرض، ستتواصل مباشرة مع الزبناء عبر الواتساب أو البريد لتتبادل الصور والتفاصيل.
+    <div class="note-box">
+      <i class="fas fa-info-circle"></i> <strong>ملاحظة:</strong> الصور تُرسل مباشرة بينك وبين الزبون (عبر الواتساب أو البريد).
     </div>
 
     <form id="carForm">
-      <label for="name">الاسم الكامل *</label>
-      <input type="text" id="name" required>
+      <div class="form-group">
+        <label for="name">الاسم الكامل *</label>
+        <input type="text" id="name" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">رقم الهاتف *</label>
+        <input type="tel" id="phone" placeholder="06XXXXXXXX" required>
+      </div>
+      <div class="form-group">
+        <label for="city">المدينة *</label>
+        <input type="text" id="city" placeholder="مثال: الدار البيضاء" required>
+      </div>
+      <div class="form-group">
+        <label for="car">نوع السيارة *</label>
+        <input type="text" id="car" placeholder="داسيا، رونو، هيونداي..." required>
+      </div>
+      <div class="form-group">
+        <label for="ac">هل مكيفة؟ *</label>
+        <select id="ac" required>
+          <option value="">اختر...</option>
+          <option value="نعم">نعم</option>
+          <option value="لا">لا</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="price">السعر اليومي (درهم)</label>
+        <input type="text" id="price" placeholder="مثال: 150">
+      </div>
+      <div class="form-group">
+        <label for="notes">ملاحظات (اختياري)</label>
+        <textarea id="notes" rows="2" placeholder="مثل: تسليم بالدار فقط"></textarea>
+      </div>
 
-      <label for="phone">رقم الهاتف *</label>
-      <input type="tel" id="phone" placeholder="06XXXXXXXX" required>
-
-      <label for="city">المدينة *</label>
-      <input type="text" id="city" placeholder="مثال: الدار البيضاء، مراكش" required>
-
-      <label for="car">نوع السيارة *</label>
-      <input type="text" id="car" placeholder="مثال: داسيا لوجان، رونو كليو" required>
-
-      <label for="year">سنة الصنع</label>
-      <input type="text" id="year" placeholder="مثال: 2020">
-
-      <label for="ac">هل السيارة مكيفة؟ *</label>
-      <select id="ac" required>
-        <option value="">اختر...</option>
-        <option value="نعم">نعم</option>
-        <option value="لا">لا</option>
-      </select>
-
-      <label for="price">سعر الكراء اليومي</label>
-      <input type="text" id="price" placeholder="مثال: 150 درهم">
-
-      <label for="notes">ملاحظات إضافية</label>
-      <textarea id="notes" rows="3" placeholder="مثال: تسليم بالدار البيضاء فقط، خدمة 24/7..."></textarea>
-
-      <button type="submit">أرسل عرضك</button>
+      <button type="submit">
+        <i class="fas fa-paper-plane"></i> أرسل عرضك الآن
+      </button>
     </form>
 
     <div id="success" class="success">
-      ✅ تم استلام عرضك! سنعاود الاتصال بك قريباً.
+      <i class="fas fa-check-circle" style="color:#4caf50"></i>
+      <h2>✅ تم الاستلام!</h2>
+      <p>سنعاود الاتصال بك خلال 24 ساعة لتأكيد العرض.</p>
     </div>
 
-    <div class="footer">
-      <p>© 2025 كري ليا — وسيط في معاملات كراء السيارات في المغرب</p>
-      <p>لا نتحمل أي مسؤولية قانونية — نحن وسطاء فقط.</p>
-    </div>
+    <footer>
+      <p>© 2025 كري ليا — وسيط فقط • لا التزامات قانونية</p>
+    </footer>
   </div>
 
   <script>
     document.getElementById('carForm').addEventListener('submit', function(e) {
       e.preventDefault();
+      
+      const formData = new FormData();
+      formData.append('name', document.getElementById('name').value);
+      formData.append('phone', document.getElementById('phone').value);
+      formData.append('city', document.getElementById('city').value);
+      formData.append('car', document.getElementById('car').value);
+      formData.append('ac', document.getElementById('ac').value);
+      formData.append('price', document.getElementById('price').value);
+      formData.append('notes', document.getElementById('notes').value);
 
-      const data = {
-        name: document.getElementById('name').value,
-        phone: document.getElementById('phone').value,
-        city: document.getElementById('city').value,
-        car: document.getElementById('car').value,
-        year: document.getElementById('year').value,
-        ac: document.getElementById('ac').value,
-        price: document.getElementById('price').value,
-        notes: document.getElementById('notes').value,
-        timestamp: new Date().toLocaleString('ar-MA')
-      };
-
-      // ✅ أرسل البيانات إلى Google Apps Script (Web App)
-      fetch(https://script.google.com/macros/s/AKfycbze5y5QfXZWI4GUENSCJtGM1tZ6X28cUytB0Occj4xzH4GESqnMs7ssmHD_ZokjZIQL/exec, {
+      fetch('https://script.google.com/macros/s/AKfycbwHXfYHl5sZ0wVKqBhe8D4Xn62z08KLuVZLQuMkHyLorYW5wtpCbx2hqk8wHfZLBlz9/exec, {
         method: 'POST',
-        mode: 'no-cors', // ← مهم: تجنب أخطاء CORS
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+        body: formData
       })
       .then(() => {
         document.getElementById('carForm').style.display = 'none';
         document.getElementById('success').style.display = 'block';
       })
-      .catch(err => {
-        alert('⚠️ حدث خطأ. يُرجى المحاولة لاحقاً أو التواصل مباشرة عبر الواتساب.');
-        console.error(err);
+      .catch(() => {
+        alert('❌ فشل الإرسال. تحقق من الاتصال وحاول مجدداً.');
       });
     });
   </script>
