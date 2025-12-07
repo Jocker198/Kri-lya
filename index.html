@@ -1,199 +1,112 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html dir="rtl" lang="ar">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>كري ليا | منصة مغربية لكراء السيارات</title>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>كري ليا — وساطة كراء السيارات في المغرب</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Tajawal', sans-serif;
-      background: linear-gradient(135deg, #0c2440, #1a3a5f);
-      color: #fff;
-      min-height: 100vh;
-      padding: 20px;
-    }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    .logo {
-      font-size: 2.8rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      background: linear-gradient(90deg, #FFD700, #FFA500);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .tagline {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-      opacity: 0.9;
-    }
-    .btn {
-      display: inline-block;
-      padding: 14px 32px;
-      margin: 10px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border-radius: 50px;
-      text-decoration: none;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .btn-primary {
-      background: #FFD700;
-      color: #0c2440;
-    }
-    .btn-primary:hover {
-      background: #FFC107;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(255, 193, 7, 0.3);
-    }
-    .btn-secondary {
-      background: transparent;
-      border: 2px solid #FFD700;
-      color: #FFD700;
-    }
-    .btn-secondary:hover {
-      background: rgba(255, 215, 0, 0.1);
-      transform: translateY(-2px);
-    }
-    .feature {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 16px;
-      padding: 20px;
-      margin-top: 40px;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      justify-content: center;
-    }
-    .icon {
-      font-size: 1.8rem;
-      color: #FFD700;
-    }
-    .form-container {
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 16px;
-      padding: 25px;
-      margin-top: 40px;
-      display: none;
-    }
-    .form-container.active {
-      display: block;
-      animation: fadeIn 0.5s ease;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    label {
-      display: block;
-      margin: 12px 0 6px;
-      font-weight: 600;
-    }
-    input, select, textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 16px;
-      border-radius: 8px;
-      border: 1px solid #4a6fa5;
-      background: rgba(0, 0, 0, 0.2);
-      color: white;
-      font-family: inherit;
-    }
-    input::placeholder {
-      color: #aaa;
-    }
-    .submit-btn {
-      background: #FFC107;
-      color: #0c2440;
-      border: none;
-      padding: 14px 40px;
-      font-size: 1.1rem;
-      font-weight: 700;
-      border-radius: 50px;
-      cursor: pointer;
-    }
-    .footer {
-      margin-top: 60px;
-      font-size: 0.9rem;
-      opacity: 0.7;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, sans-serif; }
+    body { background: #f8f9fa; padding: 15px; }
+    .container { max-width: 600px; margin: 0 auto; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    header { background: #0056b3; color: white; padding: 20px; text-align: center; }
+    h1 { font-size: 1.6em; margin-bottom: 8px; }
+    .subtitle { font-size: 0.9em; opacity: 0.9; }
+    .note { background: #e3f2fd; padding: 15px; font-size: 0.9em; color: #0d47a1; border-right: 4px solid #2196f3; margin: 15px; border-radius: 6px; }
+    form { padding: 20px; }
+    label { display: block; margin: 12px 0 6px; font-weight: bold; color: #333; }
+    input, select, textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; }
+    button { width: 100%; background: #2e7d32; color: white; border: none; padding: 14px; font-size: 1.1em; border-radius: 6px; margin-top: 10px; cursor: pointer; }
+    button:hover { background: #1b5e20; }
+    .success { display: none; text-align: center; padding: 20px; color: #2e7d32; font-weight: bold; }
+    .footer { text-align: center; padding: 15px; font-size: 0.85em; color: #666; background: #f1f8e9; }
+    .footer a { color: #0056b3; text-decoration: none; }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1 class="logo">كري ليا</h1>
-    <p class="tagline">منصة مغربية لكراء السيارات — بدون التزامات، عمولة رمزية فقط</p>
+    <header>
+      <h1>🚗 كري ليا</h1>
+      <div class="subtitle">وساطة كراء السيارات في المغرب — بدون التزامات</div>
+    </header>
 
-    <a href="https://docs.google.com/forms/d/e/.../viewform" 
-   class="btn btn-primary" 
-   target="_blank">
-  أضف سيارتك الآن
-</a>
-    </a>
-    <a href="#search" class="btn btn-secondary">
-      ابحث عن سيارة
-    </a>
-
-    <div class="feature">
-      <span class="icon">🔑</span>
-      <div>
-        <strong>بدون التزامات</strong><br>
-        أنت تبقى مالك السيارة، و"كري ليا" وسيط يساعدك في العثور على زبون موثوق.
-      </div>
+    <div class="note">
+      ⚠️ <strong>ملاحظة مهمة:</strong> الصور لا تُرفق هنا. بعد إدخال العرض، ستتواصل مباشرة مع الزبناء عبر الواتساب أو البريد لتتبادل الصور والتفاصيل.
     </div>
 
-    <div id="form" class="form-container">
-      <h3>أضف عرض كراء لسيارتك</h3>
-      <form id="carForm">
-        <label for="model">طراز السيارة</label>
-        <input type="text" id="model" placeholder="مثال: داسيا لوجان 2020" required>
+    <form id="carForm">
+      <label for="name">الاسم الكامل *</label>
+      <input type="text" id="name" required>
 
-        <label for="city">المدينة</label>
-        <input type="text" id="city" placeholder="مثال: الرباط، الدار البيضاء، فاس..." required>
+      <label for="phone">رقم الهاتف *</label>
+      <input type="tel" id="phone" placeholder="06XXXXXXXX" required>
 
-        <label for="price">السعر / اليوم (درهم)</label>
-        <input type="number" id="price" min="50" placeholder="مثال: 150" required>
+      <label for="city">المدينة *</label>
+      <input type="text" id="city" placeholder="مثال: الدار البيضاء، مراكش" required>
 
-        <label for="phone">رقم الهاتف (سيستخدم للتواصل فقط)</label>
-        <input type="tel" id="phone" placeholder="06 XX XX XX XX" required>
+      <label for="car">نوع السيارة *</label>
+      <input type="text" id="car" placeholder="مثال: داسيا لوجان، رونو كليو" required>
 
-        <label for="notes">ملاحظات إضافية (اختياري)</label>
-        <textarea id="notes" rows="3" placeholder="مثال: خزان الوقود ممتلئ، تأمين شامل..."></textarea>
+      <label for="year">سنة الصنع</label>
+      <input type="text" id="year" placeholder="مثال: 2020">
 
-        <button type="submit" class="submit-btn">إرسال العرض</button>
-      </form>
+      <label for="ac">هل السيارة مكيفة؟ *</label>
+      <select id="ac" required>
+        <option value="">اختر...</option>
+        <option value="نعم">نعم</option>
+        <option value="لا">لا</option>
+      </select>
+
+      <label for="price">سعر الكراء اليومي</label>
+      <input type="text" id="price" placeholder="مثال: 150 درهم">
+
+      <label for="notes">ملاحظات إضافية</label>
+      <textarea id="notes" rows="3" placeholder="مثال: تسليم بالدار البيضاء فقط، خدمة 24/7..."></textarea>
+
+      <button type="submit">أرسل عرضك</button>
+    </form>
+
+    <div id="success" class="success">
+      ✅ تم استلام عرضك! سنعاود الاتصال بك قريباً.
     </div>
 
-    <div id="search" style="margin-top: 60px; display: none;">
-      <h3>🔍 قريباً: صفحة البحث عن سيارات متاحة</h3>
-      <p>سيتم تفعيلها بعد جمع أول مجموعة من العروض.</p>
+    <div class="footer">
+      <p>© 2025 كري ليا — وسيط في معاملات كراء السيارات في المغرب</p>
+      <p>لا نتحمل أي مسؤولية قانونية — نحن وسطاء فقط.</p>
     </div>
-
-    <p class="footer">
-      © 2025 كري ليا — وسيط رقمي في كراء السيارات بالمغرب.<br>
-      جميع العقود تتم مباشرة بين المالك والمستأجر.
-    </p>
   </div>
 
   <script>
-  document.getElementById('carForm').onsubmit = function(e) {
-    e.preventDefault();
-    alert('✅ شكراً! تم استلام طلبك.\nسيتم مراجعته وعرضه قريباً.\n\n💡 نصيحة: في هذه المرحلة، ننصح باستخدام نموذج Google Forms لجمع البيانات بدلاً من الكود التقني.');
-    this.reset();
-    document.getElementById('form').classList.remove('active');
-  };
-</script>
+    document.getElementById('carForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const data = {
+        name: document.getElementById('name').value,
+        phone: document.getElementById('phone').value,
+        city: document.getElementById('city').value,
+        car: document.getElementById('car').value,
+        year: document.getElementById('year').value,
+        ac: document.getElementById('ac').value,
+        price: document.getElementById('price').value,
+        notes: document.getElementById('notes').value,
+        timestamp: new Date().toLocaleString('ar-MA')
+      };
+
+      // ✅ أرسل البيانات إلى Google Apps Script (Web App)
+      fetch('YOUR_WEB_APP_URL_HERE', {
+        method: 'POST',
+        mode: 'no-cors', // ← مهم: تجنب أخطاء CORS
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      .then(() => {
+        document.getElementById('carForm').style.display = 'none';
+        document.getElementById('success').style.display = 'block';
+      })
+      .catch(err => {
+        alert('⚠️ حدث خطأ. يُرجى المحاولة لاحقاً أو التواصل مباشرة عبر الواتساب.');
+        console.error(err);
+      });
+    });
+  </script>
 </body>
 </html>
