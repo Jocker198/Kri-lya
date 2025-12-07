@@ -137,7 +137,7 @@
     <p class="tagline">منصة مغربية لكراء السيارات — بدون التزامات، عمولة رمزية فقط</p>
 
     <a href="#" class="btn btn-primary" onclick="document.getElementById('form').classList.add('active'); return false;">
-      أ<a href="https://docs.google.com/spreadsheets/d/11fCgl1EaghawQx6c7sopyZUXT2mVBUc32L32rr22V9s/edit?usp=sharing" 
+      أ<a href="https://docs.google.com/spreadsheets/d/1DCaUyFaO3u3EqIr01MOjHRDPJYrqWVT7CCw88pvQSl4/edit?usp=sharing" 
    class="btn btn-primary" 
    target="_blank">
   أضف سيارتك الآن
@@ -189,10 +189,12 @@
   </div>
 
   <script>
-    document.getElementById('carForm').onsubmit = function(e) {
-      e.preventDefault();
-      alert('✅ شكرًا! تم استلام طلبك.\nسيتم مراجعته وعرضه قريباً.\n\n💡 ملاحظة: في هذه النسخة التجريبية، لا يتم حفظ البيانات تلقائياً.\nللاستخدام الفعلي، سنربط النموذج بـ Google Sheets أو قاعدة بيانات.');
-    };
-  </script>
+  document.getElementById('carForm').onsubmit = function(e) {
+    e.preventDefault();
+    alert('✅ شكراً! تم استلام طلبك.\nسيتم مراجعته وعرضه قريباً.\n\n💡 نصيحة: في هذه المرحلة، ننصح باستخدام نموذج Google Forms لجمع البيانات بدلاً من الكود التقني.');
+    this.reset();
+    document.getElementById('form').classList.remove('active');
+  };
+</script>
 </body>
 </html>
