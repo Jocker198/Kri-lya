@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>كري ليا — وسيطك الموثوق في كراء السيارات</title>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%23D4AF37%22>KL</text></svg>">
   <style>
     * {
       margin: 0;
@@ -47,31 +46,6 @@
       margin: 0 auto;
     }
 
-    .nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 30px;
-      flex-wrap: wrap;
-    }
-
-    .nav-btn {
-      background: transparent;
-      border: 1px solid #444;
-      color: #aaa;
-      padding: 10px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-family: 'Tajawal', sans-serif;
-      transition: all 0.3s;
-    }
-
-    .nav-btn:hover, .nav-btn.active {
-      background: rgba(212, 175, 55, 0.1);
-      color: #D4AF37;
-      border-color: #D4AF37;
-    }
-
     .section {
       margin: 30px 0;
       padding: 30px;
@@ -106,6 +80,26 @@
       text-decoration: none;
     }
 
+    .trust-banner {
+      background: linear-gradient(135deg, #1a5f1a, #0d3b0d);
+      border-radius: 12px;
+      padding: 25px;
+      margin: 30px 0;
+      text-align: center;
+      border: 1px solid #2a9e2a;
+    }
+
+    .trust-banner h3 {
+      color: #aaffaa;
+      margin-bottom: 10px;
+    }
+
+    .trust-banner p {
+      color: #dfffdf;
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
+
     .disclaimer {
       background: rgba(40, 20, 0, 0.3);
       border-left: 4px solid #D4AF37;
@@ -118,59 +112,13 @@
     }
 
     .fee-note {
-      background: rgba(30, 30, 50, 0.4);
+      background: rgba(30, 50, 30, 0.4);
       padding: 18px;
       border-radius: 8px;
       margin: 20px 0;
       font-size: 1.1rem;
-      color: #add8e6;
+      color: #aaffaa;
       text-align: right;
-    }
-
-    /* === CMI Wallet Banner === */
-    .cmi-banner {
-      background: linear-gradient(135deg, #0d3b66, #1a5f9e);
-      border-radius: 12px;
-      padding: 25px;
-      margin: 30px 0;
-      text-align: center;
-      border: 1px solid #2a7bc7;
-    }
-
-    .cmi-logo {
-      height: 40px;
-      margin-bottom: 15px;
-      filter: brightness(1.2);
-    }
-
-    .cmi-title {
-      font-size: 1.5rem;
-      color: #fff;
-      margin-bottom: 10px;
-    }
-
-    .cmi-desc {
-      color: #e0f0ff;
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-      line-height: 1.7;
-    }
-
-    .cmi-steps {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 20px;
-    }
-
-    .step {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      color: #aad5ff;
-      min-width: 140px;
     }
 
     .btn-group {
@@ -214,145 +162,6 @@
       transform: translateY(-3px);
     }
 
-    /* === نماذج منبثقة === */
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.85);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-      opacity: 0;
-      visibility: hidden;
-      transition: all 0.4s ease;
-    }
-
-    .overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .popup {
-      background: #0a0a0a;
-      width: 90%;
-      max-width: 550px;
-      border-radius: 16px;
-      border: 2px solid #D4AF37;
-      padding: 30px;
-      position: relative;
-      box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
-      text-align: right;
-    }
-
-    .popup h3 {
-      color: #D4AF37;
-      margin-bottom: 20px;
-      font-size: 1.8rem;
-      text-align: center;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      font-size: 1.8rem;
-      color: #D4AF37;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: bold;
-      text-align: right;
-    }
-
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 12px;
-      background: #111;
-      border: 1px solid #333;
-      border-radius: 8px;
-      color: white;
-      font-family: 'Tajawal', sans-serif;
-      font-size: 1rem;
-      text-align: right;
-    }
-
-    .terms {
-      background: #151515;
-      padding: 15px;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      margin: 20px 0;
-      text-align: right;
-      max-height: 150px;
-      overflow-y: auto;
-      border: 1px solid #444;
-    }
-
-    .checkbox-group {
-      display: flex;
-      align-items: center;
-      margin: 20px 0;
-      justify-content: flex-end;
-    }
-
-    .checkbox-group input {
-      margin-left: 10px;
-      transform: scale(1.3);
-    }
-
-    .submit-btn {
-      width: 100%;
-      padding: 14px;
-      background: #D4AF37;
-      color: #000;
-      font-weight: bold;
-      font-size: 1.1rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .submit-btn:hover {
-      background: #FFD700;
-    }
-
-    .submit-btn:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
-
-    .cmi-notice {
-      background: rgba(13, 59, 102, 0.3);
-      padding: 15px;
-      border-radius: 8px;
-      margin-top: 20px;
-      font-size: 1.05rem;
-      color: #87cefa;
-      text-align: right;
-    }
-
-    .cmi-notice img {
-      height: 24px;
-      vertical-align: middle;
-      margin-left: 8px;
-    }
-
     footer {
       margin-top: 60px;
       padding: 25px;
@@ -365,9 +174,7 @@
       h1 { font-size: 2.2rem; }
       .subtitle { font-size: 1.2rem; }
       .btn { padding: 14px 30px; min-width: 180px; font-size: 1.2rem; }
-      .btn-group, .nav, .cmi-steps { flex-direction: column; align-items: center; }
-      .popup { padding: 20px; }
-      .step { width: 100%; }
+      .btn-group { flex-direction: column; }
     }
   </style>
 </head>
@@ -380,368 +187,81 @@
       <div class="subtitle">وسيطك الموثوق في كراء السيارات — المغرب 🇲🇦</div>
     </header>
 
-    <div class="nav">
-      <button class="nav-btn active">الرئيسية</button>
-      <button class="nav-btn" onclick="openPopup('faq')">❓ الأسئلة الشائعة</button>
+    <section class="section">
+      <h2>مرحبًا بكم</h2>
+      <p>نرحب بكم في "كري ليا"، حيث نبني الجسور بين مالكي السيارات والراغبين في الكراء — عبر وسيط بشري موثوق.</p>
+    </section>
+
+    <div class="trust-banner">
+      <h3>✓ بدون عمولة مقدمة</h3>
+      <p>
+        لا نطلب منك الدفع مقدمًا.<br>
+        نبدأ بالوساطة مجانًا، وعندما تتحقق من جدية الطرف وتنجح الصفقة،<br>
+        تُؤدي العمولة (10 دراهم) <strong>طوعيًّا</strong> كـ "شكر" على الخدمة.
+      </p>
     </div>
 
     <section class="section">
-      <h2>مرحبًا بكم</h2>
-      <p>نرحب بكم في "كري ليا"، خدمتكم الاحترافية لتسهيل عملية كراء السيارات في المغرب.</p>
-    </section>
-
-    <section class="section">
       <h2>من نحن؟</h2>
-      <p>كري ليا هي خدمة وساطة إلكترونية في مجال كراء السيارات في المغرب، تعمل كوسيط محايد بين مالكي السيارات والراغبين في الكراء.</p>
+      <p>كري ليا ليست موقعًا آليًّا — بل خدمة وساطة بشرية:<br>
+      نتلقى طلباتك، ونختار لك العروض المناسبة، ونتواصل مع الطرفين لضمان الجدية.</p>
       
       <div class="contact-info">
-        ☎️ للاتصال: <strong>14 98 49 98 06</strong><br>
+        📞 للاتصال: <strong>14 98 49 98 06</strong><br>
         💬 <a href="https://wa.me/212698499814" target="_blank">واتساب مباشر</a>
       </div>
     </section>
 
-    <section class="section">
-      <h2>كيف نعمل؟</h2>
-      <p>نساعد مالكي السيارات على عرض مركباتهم للكراء، ونربطهم بأشخاص موثوقين يرغبون في الكراء — عبر وسيط محايد.</p>
-      
-      <div class="fee-note">
-        💰 <strong>العمولة:</strong> 10 دراهم فقط تُؤدى <u>عند تفعيل التواصل</u>.<br>
-        • مالك السيارة: يدفع بعد عرض الإعلان.<br>
-        • المؤجر: يدفع ليحصل على رقم مالك السيارة.
-      </div>
-
-      <!-- CMI Wallet Banner -->
-      <div class="cmi-banner">
-        <img src="https://jocker198.github.io/Kri-lya/cmi-wallet-logo.png" alt="CMI Wallet" class="cmi-logo">
-        <div class="cmi-title">ادفع بسهولة عبر CMI Wallet</div>
-        <div class="cmi-desc">
-          لا تحتاج لبطاقة بنكية! فقط حمّل تطبيق CMI Wallet، وادفع في ثوانٍ عبر هاتفك.
-        </div>
-        <div class="cmi-steps">
-          <div class="step">1. حمّل التطبيق</div>
-          <div class="step">2. شغّل المحفظة</div>
-          <div class="step">3. ادفع 10 دراهم</div>
-        </div>
-        <a href="https://play.google.com/store/apps/details?id=ma.cmi.wallet" target="_blank" style="display:inline-block; margin:10px 5px; color:#fff; text-decoration:underline;">
-          📱 Android
-        </a>
-        <a href="https://apps.apple.com/ma/app/cmi-wallet/id1482422865" target="_blank" style="display:inline-block; margin:10px 5px; color:#fff; text-decoration:underline;">
-          🍏 iPhone
-        </a>
-      </div>
-    </section>
+    <div class="fee-note">
+      💡 <strong>العمولة:</strong> 10 دراهم فقط — تُؤدى <u>بعد إتمام الاتصال والاتفاق</u>، كـ "شكر" على الوساطة.  
+      لا إلزام، لا ضغط — فقط ثقة متبادلة.
+    </div>
 
     <div class="disclaimer">
-      <strong>تنويه قانوني:</strong> كري ليا تلعب دور الوسيط فقط. العقد يُبرم مباشرة بين مالك السيارة والمؤجِر. لا تتحمل "كري ليا" أية مسؤولية قانونية أو مالية تجاه أي طرف.
+      <strong>تنويه:</strong> كري ليا تلعب دور الوسيط البشري فقط. العقد يُبرم مباشرة بين الطرفين. لا توجد أي التزامات قانونية أو مالية مسبقة.
     </div>
 
     <div class="btn-group">
-      <button class="btn btn-primary" onclick="openPopup('sell')">
+      <button class="btn btn-primary" onclick="openWhatsApp('عرض')">
         اعرض سيارتك
       </button>
-      <button class="btn btn-secondary" onclick="openPopup('rent')">
+      <button class="btn btn-secondary" onclick="openWhatsApp('كراء')">
         ابحث عن سيارة
       </button>
     </div>
 
     <footer>
-      © 2025 كري ليا — جميع الحقوق محفوظة
+      © 2025 كري ليا — جميع الحقوق محفوظة<br>
+      "الوساطة الناجحة تبدأ بالثقة، لا بالدفع"
     </footer>
 
   </div>
 
-  <!-- نموذج عرض السيارة -->
-  <div class="overlay" id="sellPopup">
-    <div class="popup">
-      <button class="close-btn" onclick="closePopup('sell')">&times;</button>
-      <h3>اعرض سيارتك للكراء</h3>
-
-      <div class="terms">
-        <strong>شروط الاستخدام:</strong><br>
-        • كري ليا تلعب دور الوسيط فقط — لا تملك السيارة، ولا تبرم العقود.<br>
-        • أنت (مالك السيارة) تتحمل المسؤولية الكاملة عن صحة المعلومات وعن السيارة.<br>
-        • العقد يُبرم مباشرة بينك وبين المؤجِر.<br>
-        • العمولة (10 دراهم) تُدفع عبر <strong>CMI Wallet</strong> أو بطاقة بنكية.<br>
-        • كري ليا غير مسؤولة عن أي ضرر أو نزاع بعد إتمام الاتصال.
-      </div>
-
-      <div class="checkbox-group">
-        <label>أوافق على الشروط وأؤكد أني مالك السيارة أو مفوّض منها</label>
-        <input type="checkbox" id="sellTerms">
-      </div>
-
-      <form id="sellForm">
-        <div class="form-group">
-          <label>نوع السيارة</label>
-          <select name="type" required>
-            <option value="">اختر النوع</option>
-            <option value="سيدان">سيدان</option>
-            <option value="SUV">SUV</option>
-            <option value="بيك آب">بيك آب</option>
-            <option value="أخرى">أخرى</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>الموديل</label>
-          <input type="text" name="model" placeholder="مثال: Dacia Logan" required>
-        </div>
-        <div class="form-group">
-          <label>السنة</label>
-          <input type="number" name="year" min="1990" max="2025" required>
-        </div>
-        <div class="form-group">
-          <label>الكيلومترات</label>
-          <input type="number" name="km" placeholder="مثال: 85000" min="0" required>
-        </div>
-        <div class="form-group">
-          <label>المدينة</label>
-          <input type="text" name="city" placeholder="مثال: الدار البيضاء" required>
-        </div>
-        <div class="form-group">
-          <label>رقم الهاتف (سيُرسل بعد الدفع)</label>
-          <input type="tel" name="phone" pattern="0[567][0-9]{8}" placeholder="0612345678" required>
-        </div>
-        
-        <div class="cmi-notice">
-          <strong>طريقة الدفع:</strong> بعد إرسال الطلب، ستُوجّه إلى بوابة CMI لدفع 10 دراهم عبر:<br>
-          <img src="https://jocker198.github.io/Kri-lya/cmi-wallet-logo.png" alt="CMI Wallet"> CMI Wallet (موصى به)<br>
-          أو بطاقة بنكية / تحويل بنكي.
-        </div>
-
-        <button type="submit" class="submit-btn" disabled>إرسال الطلب</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- نموذج طلب كراء -->
-  <div class="overlay" id="rentPopup">
-    <div class="popup">
-      <button class="close-btn" onclick="closePopup('rent')">&times;</button>
-      <h3>ابحث عن سيارة للكراء</h3>
-
-      <div class="terms">
-        <strong>تنويه:</strong><br>
-        • كري ليا وسيط فقط — لا تملك السيارات ولا تتحمل مسؤولية عنها.<br>
-        • رقم مالك السيارة لن يُعرض إلا بعد دفع العمولة (10 دراهم) عبر CMI.<br>
-        • العقد يُبرم مباشرة بينك وبين مالك السيارة.<br>
-        • كري ليا غير مسؤولة عن محتوى العقد أو تنفيذه.
-      </div>
-
-      <div class="checkbox-group">
-        <label>أوافق على الشروط وأدرك أن كري ليا ليست طرفًا في العقد</label>
-        <input type="checkbox" id="rentTerms">
-      </div>
-
-      <form id="rentForm">
-        <div class="form-group">
-          <label>نوع السيارة المطلوبة</label>
-          <select name="type" required>
-            <option value="">اختر النوع</option>
-            <option value="اقتصادية">اقتصادية</option>
-            <option value="سيدان">سيدان</option>
-            <option value="SUV">SUV</option>
-            <option value="أخرى">أخرى</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>الميزانية الشهرية (درهم)</label>
-          <input type="number" name="budget" min="500" placeholder="مثال: 3000" required>
-        </div>
-        <div class="form-group">
-          <label>المدينة</label>
-          <input type="text" name="city" placeholder="مثال: الرباط" required>
-        </div>
-        <div class="form-group">
-          <label>مدة الكراء</label>
-          <input type="text" name="duration" placeholder="مثال: 6 أشهر" required>
-        </div>
-        <div class="form-group">
-          <label>رقم هاتفك</label>
-          <input type="tel" name="phone" pattern="0[567][0-9]{8}" placeholder="0612345678" required>
-        </div>
-        
-        <div class="cmi-notice">
-          <strong>مهم:</strong> بعد الدفع، ستتلقى رقم مالك السيارة عبر واتساب خلال  لحظات
-        </div>
-
-        <button type="submit" class="submit-btn" disabled>أرسل طلبك</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- صفحة الأسئلة الشائعة -->
-  <div class="overlay" id="faqPopup">
-    <div class="popup">
-      <button class="close-btn" onclick="closePopup('faq')">&times;</button>
-      <h3>❓ الأسئلة الشائعة</h3>
-
-      <div class="faq-item">
-        <div class="faq-q">ما دور "كري ليا" بالضبط؟</div>
-        <div class="faq-a">نحن خدمة وساطة إلكترونية نربط بين مالكي السيارات والراغبين في الكراء. لا نملك السيارات، ولا نبرم العقود، ولا نتدخل في التفاوض.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">كيف أدفع العمولة؟</div>
-        <div class="faq-a">العمولة (10 دراهم) تُدفع إلكترونيًّا عبر <strong>CMI Wallet</strong> (موصى به)، أو بطاقة بنكية، أو تحويل بنكي.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">هل تتحملون مسؤولية السيارة أو العقد؟</div>
-        <div class="faq-a">كلا. العقد يُبرم مباشرة بين مالك السيارة والمؤجِر. كري ليا غير مسؤولة عن أي أضرار أو نزاعات بعد إتمام التواصل.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">ما هو CMI Wallet؟</div>
-        <div class="faq-a">CMI Wallet هي محفظة إلكترونية مغربية مرخصة من بنك المغرب. تُحمّل على الهاتف، وتدعم الدفع الفوري — حتى بدون بطاقة بنكية.</div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">كيف أحمّل CMI Wallet؟</div>
-        <div class="faq-a">
-          • <a href="https://play.google.com/store/apps/details?id=ma.cmi.wallet" target="_blank" style="color:#D4AF37">لأجهزة أندرويد</a><br>
-          • <a href="https://apps.apple.com/ma/app/cmi-wallet/id1482422865" target="_blank" style="color:#D4AF37">لأجهزة آيفون</a>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">ماذا بعد الدفع؟</div>
-        <div class="faq-a">فور تأكيد الدفع، نرسل رقم مالك السيارة (أو رقم المؤجر) إلى الطرف الآخر عبر واتساب خلال 5 دقائق كحد أقصى.</div>
-      </div>
-    </div>
-  </div>
-
   <script>
-    // --- إعدادات CMI (ستُملأ عند التفعيل) ---
-    const CMI_CONFIG = {
-      merchant_id: "123456",       // ← ستحصل عليه من CMI
-      merchant_site_id: "789",     // ← ستحصل عليه من CMI
-      access_token: "ABCD-EFGH-IJKL-MNOP", // ← سري! لا تنشره
-      url: "https://www.cmi.co.ma/payment"
-    };
-
-    // دالة توليد الـ hash (SHA-256) - آمنة ومتوافقة مع CMI
-    async function generateHash(data) {
-      const encoder = new TextEncoder();
-      const dataStr = data + CMI_CONFIG.access_token;
-      const buffer = encoder.encode(dataStr);
-      const hashBuffer = await crypto.subtle.digest('SHA-256', buffer);
-      const hashArray = Array.from(new Uint8Array(hashBuffer));
-      return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    function openWhatsApp(type) {
+      let msg = '';
+      if (type === 'عرض') {
+        msg = `مرحبًا بكم في كري ليا 🌟\nأرغب في عرض سيارتي للكراء:\n\n`;
+        msg += `• النوع: \n`;
+        msg += `• الموديل: \n`;
+        msg += `• السنة: \n`;
+        msg += `• الكيلومترات: \n`;
+        msg += `• المدينة: \n`;
+        msg += `• رقم الهاتف: \n\n`;
+        msg += `✅ أؤكد أنني مالك السيارة أو مفوّض منها.\n\n`;
+        msg += `📌 ملاحظة: لا توجد عمولة مقدمة. العمولة (10 دراهم) تُؤدى طواعية عند إتمام الصفقة.`;
+      } else {
+        msg = `مرحبًا بكم في كري ليا 🌟\nأبحث عن سيارة للكراء:\n\n`;
+        msg += `• النوع المطلوب: \n`;
+        msg += `• الثمن المطلوب: \n`;
+        msg += `• المدينة: \n`;
+        msg += `• مدة الكراء: \n`;
+        msg += `• رقم هاتفي: \n\n`;
+        msg += `📌 ملاحظة: لا دفع مطلوب الآن. سنرسل لك عروضًا مناسبة، وعند الاتفاق تُؤدى العمولة (10 دراهم) طواعية.`;
+      }
+      const encoded = encodeURIComponent(msg);
+      window.open(`https://wa.me/212698499814?text=${encoded}`, '_blank');
     }
-
-    // دالة إنشاء رابط الدفع
-    async function createCmiUrl(amount, reference, phone) {
-      const data = 
-        CMI_CONFIG.merchant_id +
-        CMI_CONFIG.merchant_site_id +
-        amount +
-        reference;
-
-      const hash = await generateHash(data);
-      
-      const params = new URLSearchParams({
-        merchant_id: CMI_CONFIG.merchant_id,
-        merchant_site_id: CMI_CONFIG.merchant_site_id,
-        amount: amount,
-        currency: "504",
-        reference: reference,
-        language: "ar",
-        customer_email: "client@kri-lya.ma",
-        customer_phone: phone,
-        return_url: "https://kri-lya.ma/thank-you.html",
-        cancel_url: "https://kri-lya.ma/",
-        hash: hash
-      });
-
-      return `${CMI_CONFIG.url}?${params.toString()}`;
-    }
-
-    // فتح النماذج
-    window.openPopup = function(type) {
-      document.getElementById(type + 'Popup')?.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    };
-
-    window.closePopup = function(type) {
-      document.getElementById(type + 'Popup')?.classList.remove('active');
-      document.body.style.overflow = '';
-    };
-
-    // إغلاق بالنقر خارج النموذج
-    document.querySelectorAll('.overlay').forEach(overlay => {
-      overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) {
-          overlay.classList.remove('active');
-          document.body.style.overflow = '';
-        }
-      });
-    });
-
-    // تفعيل الزر حسب الموافقة
-    document.getElementById('sellTerms')?.addEventListener('change', function() {
-      document.querySelector('#sellForm .submit-btn').disabled = !this.checked;
-    });
-    document.getElementById('rentTerms')?.addEventListener('change', function() {
-      document.querySelector('#rentForm .submit-btn').disabled = !this.checked;
-    });
-
-    // معالجة إرسال "عرض السيارة"
-    document.getElementById('sellForm')?.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      
-      if (!document.getElementById('sellTerms').checked) {
-        alert("يرجى الموافقة على الشروط أولًا");
-        return;
-      }
-
-      const data = new FormData(this);
-      const phone = data.get('phone');
-      const reference = "KL_SELL_" + Date.now();
-
-      if (confirm("سيتم توجيهك لدفع 10 دراهم (1000 سنتيم) عبر CMI.\n\n✓ CMI Wallet (موصى به)\n✓ بطاقة بنكية\n✓ تحويل بنكي\n\nهل تريد المتابعة؟")) {
-        try {
-          // في الإنتاج: استخدم createCmiUrl
-          // const cmiUrl = await createCmiUrl("1000", reference, phone);
-          // window.location.href = cmiUrl;
-
-          // للتجربة الآن: نوجه لوتساب مع رسالة تأكيد
-          const msg = `طلب عرض سيارة عبر كري ليا 🌟\nالمرجع: ${reference}\n\n✅ سيتم إرسال رابط الدفع خلال دقيقة.`;
-          window.open(`https://wa.me/212698499814?text=${encodeURIComponent(msg)}`, '_blank');
-          
-          closePopup('sell');
-        } catch (err) {
-          alert("حدث خطأ في توليد رابط الدفع. يرجى المحاولة لاحقًا.");
-          console.error(err);
-        }
-      }
-    });
-
-    // معالجة إرسال "طلب كراء"
-    document.getElementById('rentForm')?.addEventListener('submit', async function(e) {
-      e.preventDefault();
-      
-      if (!document.getElementById('rentTerms').checked) {
-        alert("يرجى الموافقة على الشروط أولًا");
-        return;
-      }
-
-      const data = new FormData(this);
-      const phone = data.get('phone');
-      const reference = "KL_RENT_" + Date.now();
-
-      if (confirm("سيتم توجيهك لدفع 10 دراهم (1000 سنتيم) عبر CMI.\n\n✓ CMI Wallet (موصى به)\n✓ بطاقة بنكية\n✓ تحويل بنكي\n\nهل تريد المتابعة؟")) {
-        try {
-          // const cmiUrl = await createCmiUrl("1000", reference, phone);
-          // window.location.href = cmiUrl;
-
-          const msg = `طلب كراء سيارة عبر كري ليا 🌟\nالمرجع: ${reference}\n\n✅ سيتم إرسال رابط الدفع خلال دقيقة.`;
-          window.open(`https://wa.me/212698499814?text=${encodeURIComponent(msg)}`, '_blank');
-          closePopup('rent');
-        } catch (err) {
-          alert("حدث خطأ. يرجى المحاولة لاحقًا.");
-        }
-      }
-    });
   </script>
 
 </body>
