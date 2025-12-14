@@ -1,70 +1,79 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>كري ليا — وسيطك الموثوق في كراء السيارات والشقق</title>
+<title>Kri Lya — Trusted Moroccan Mobility</title>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  body { margin:0; font-family:'Tajawal',sans-serif; background:#f4f4f4; color:#333; line-height:1.6; }
-  .container { max-width:1200px; margin:0 auto; padding:20px; }
-  header { background: linear-gradient(90deg,#d80027,#006233); color:#fff; padding:50px 20px; border-radius:15px; text-align:center; }
-  header h1 { font-size:3rem; margin-bottom:10px; text-shadow:1px 1px 4px #000; }
-  header p { font-size:1.2rem; color:#ffd700; }
-  section { margin:30px 0; padding:30px; background:#fff; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1); }
-  h2 { color:#d80027; margin-bottom:15px; border-bottom:3px solid #006233; display:inline-block; padding-bottom:5px; }
-  p { font-size:1.1rem; color:#333; }
-  .btn { display:inline-block; padding:15px 35px; margin:10px; font-weight:bold; text-decoration:none; border-radius:10px; transition:0.3s; }
-  .btn-primary { background:#d80027; color:#fff; }
-  .btn-primary:hover { background:#ff0000; transform:translateY(-3px); }
-  .btn-secondary { background:#006233; color:#fff; }
-  .btn-secondary:hover { background:#009944; transform:translateY(-3px); }
-  .map-container iframe { width:100%; height:450px; border:none; border-radius:15px; }
-  footer { text-align:center; padding:20px; background:#222; color:#ffd700; border-radius:10px; margin-top:40px; }
-  a.legal-link { color:#d80027; font-weight:bold; display:block; margin-top:15px; text-decoration:underline; }
-  @media(max-width:768px){ header h1{font-size:2.2rem;} header p{font-size:1rem;} }
+/* نفس تنسيقات index.html مع تعديل النصوص للإنجليزية */
+body{margin:0;font-family:'Tajawal',sans-serif;background:#f4f4f4;color:#333;line-height:1.6;padding:20px;}
+.container{max-width:1200px;margin:0 auto;padding:20px;}
+header{background: linear-gradient(90deg,#d80027,#006233); color:#fff; padding:50px 20px; border-radius:15px; text-align:center;}
+header h1{font-size:3rem;margin-bottom:10px;text-shadow:1px 1px 4px #000;}
+header p{font-size:1.2rem;color:#ffd700;}
+section{margin:30px 0;padding:30px;background:#fff;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,0.1);}
+h2{color:#d80027;margin-bottom:15px;border-bottom:3px solid #006233;display:inline-block;padding-bottom:5px;}
+p{font-size:1.1rem;color:#333;}
+.btn{display:inline-block;padding:15px 35px;margin:10px;font-weight:bold;text-decoration:none;border-radius:10px;transition:0.3s;}
+.btn-primary{background:#d80027;color:#fff;}
+.btn-primary:hover{background:#ff0000;transform:translateY(-3px);}
+.btn-secondary{background:#006233;color:#fff;}
+.btn-secondary:hover{background:#009944;transform:translateY(-3px);}
+.map-container iframe{width:100%;height:450px;border:none;border-radius:15px;}
+footer{text-align:center;padding:20px;background:#222;color:#ffd700;border-radius:10px;margin-top:40px;}
+.services p{cursor:pointer; margin:10px 0; padding:10px; border-radius:8px; background:#f0f0f0; transition:0.3s;}
+.services p:hover{background:#dff0d8;}
 </style>
 </head>
 <body>
 <div class="container">
 <header>
-  <h1>كري ليا</h1>
-  <p>وسيطك الموثوق في المغرب 🇲🇦 | لمسة أفريقية وعالمية</p>
+  <h1>Kri Lya</h1>
+  <p>Your trusted Moroccan mobility 🌍 | African & Global touch</p>
 </header>
 
 <section>
-  <h2>مرحبًا بكم</h2>
-  <p>كري ليا خدمة وساطة بشرية مغربية 100٪ لمساعدة الزوار والمغاربة على إيجاد سيارات وشقق موثوقة خلال كأس إفريقيا وأيام التظاهرات. كل شيء يتم بالاتفاق المباشر بين الأطراف، ونحن نسهّل التواصل بطريقة منظمة وموثوقة.</p>
-  <a class="legal-link" href="legal.html">📄 الإطار القانوني للوساطة — تعرف على حقوقك والتزاماتك</a>
+  <h2>Welcome</h2>
+  <p>Kri Lya is a 100% Moroccan human-based service helping visitors and locals find trusted cars and apartments during Africa Cup and events. All deals are made directly between parties, we facilitate communication safely and reliably.</p>
+  <a class="legal-link" href="legal.html">📄 Legal Framework — Know your rights and obligations</a>
 </section>
 
-<section>
-  <h2>خدماتنا</h2>
-  <p>🚗 <strong>كراء سيارات</strong> – Car rental facilitation</p>
-  <p>🏠 <strong>كراء شقق</strong> – Apartment rental facilitation</p>
-  <p>🧑‍✈️ <strong>سائقون محليون موثوقون</strong> – Trusted local drivers</p>
-  <p>🏟️ <strong>تنقل خاص أيام المباريات</strong> – Event information</p>
-  <p>🧳 <strong>معلومات سياحية</strong> – Tourist attractions guidance</p>
+<section class="services">
+  <h2>Our Services</h2>
+  <p onclick="openForm('car')">🚗 Car Rentals</p>
+  <p onclick="openForm('apartment')">🏠 Apartment Rentals</p>
+  <p onclick="openForm('driver')">🧑‍✈️ Trusted Local Drivers</p>
 </section>
 
 <section class="map-container">
-  <h2>المدن والملاعب</h2>
-  <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1rZ9GkG1bF2wE-K0L1TjkI6kQF5VnH9P2&hl=ar" allowfullscreen></iframe>
+  <h2>Cities & Stadiums</h2>
+  <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1rZ9GkG1bF2wE-K0L1TjkI6kQF5VnH9P2&hl=en" allowfullscreen></iframe>
 </section>
 
 <section>
-  <h2>أماكن سياحية موصى بها</h2>
-  <p>مراكش، فاس، الدار البيضاء، شفشاون، الصويرة وغيرها – اكتشفوا المغرب خلال زيارتكم!</p>
+  <h2>Recommended Tourist Places</h2>
+  <p>Marrakech, Fes, Casablanca, Chefchaouen, Essaouira, and more – discover Morocco during your visit!</p>
 </section>
 
 <div style="text-align:center;">
-  <a href="contact.html" class="btn btn-primary">تواصل معنا</a>
-  <a href="about.html" class="btn btn-secondary">من نحن</a>
+  <a href="contact.html" class="btn btn-primary">Contact Us</a>
+  <a href="about.html" class="btn btn-secondary">About Us</a>
 </div>
 
 <footer>
-  © 2025 كري ليا — جميع الحقوق محفوظة | الوساطة البشرية فقط، لا نقل أو حجز إلزامي
+  © 2025 Kri Lya — All rights reserved | Human facilitation only, no direct transport or booking
 </footer>
 </div>
+
+<script>
+function openForm(service){
+  let url = '';
+  if(service==='car') url='https://forms.gle/YourCarFormLink';
+  else if(service==='apartment') url='https://forms.gle/YourApartmentFormLink';
+  else if(service==='driver') url='https://forms.gle/YourDriverFormLink';
+  window.open(url,'_blank');
+}
+</script>
 </body>
-</html>
+    </html>
