@@ -6,160 +6,119 @@
 <title>كري ليا — وسيطك الموثوق في المغرب | KriLya Trusted Mobility</title>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 <style>
-/* ==== Reset & Base ==== */
-* {margin:0; padding:0; box-sizing:border-box;}
-body {font-family:'Tajawal',sans-serif; line-height:1.6; background:#f7f7f7; color:#333;}
-.container {max-width:1200px; margin:0 auto; padding:20px;}
-
-/* ==== Header ==== */
-header {
-  background: linear-gradient(90deg,#d80027,#006233);
-  color:#fff;
-  padding:60px 20px;
-  text-align:center;
-  border-radius:20px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.2);
-  position: relative;
-}
-header h1 {font-size:3rem; margin-bottom:10px; text-shadow:2px 2px 8px #000;}
-header p {font-size:1.3rem; color:#ffd700;}
-.lang-toggle {position:absolute; top:20px; left:20px; background:#ffd700; color:#006233; border:none; padding:10px 20px; border-radius:12px; cursor:pointer; font-weight:bold;}
-
-/* ==== Sections ==== */
-section {margin:40px 0; padding:30px; background:#fff; border-radius:20px; box-shadow:0 5px 15px rgba(0,0,0,0.05);}
-h2 {color:#d80027; margin-bottom:15px; border-bottom:4px solid #006233; display:inline-block; padding-bottom:5px; font-size:2rem;}
-p {font-size:1.1rem; color:#333; margin:10px 0;}
-
-/* ==== Services ==== */
-.services {display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-top:20px;}
-.service-card {
-  flex:1 1 250px;
-  min-width:250px;
-  background:#f9f9f9;
-  border-radius:15px;
-  padding:20px;
-  cursor:pointer;
-  transition:0.3s;
-  text-align:center;
-  box-shadow:0 5px 15px rgba(0,0,0,0.05);
-}
-.service-card:hover {background:#e6ffe6; transform:translateY(-5px);}
-.service-card h3 {font-size:1.5rem; margin-bottom:10px;}
-.service-card p {font-size:1.1rem;}
-
-/* ==== Buttons ==== */
-.btn {display:inline-block; padding:15px 40px; margin:10px; border-radius:12px; font-weight:bold; text-decoration:none; transition:0.3s;}
-.btn-primary {background:#d80027; color:#fff;}
-.btn-primary:hover {background:#ff0000; transform:translateY(-3px);}
-.btn-secondary {background:#006233; color:#fff;}
-.btn-secondary:hover {background:#009944; transform:translateY(-3px);}
-
-/* ==== Map ==== */
-.map-container iframe {width:100%; height:450px; border-radius:20px; border:none;}
-
-/* ==== Footer ==== */
-footer {text-align:center; padding:25px; background:#222; color:#ffd700; border-radius:12px; margin-top:50px; font-size:1rem;}
-footer a {color:#ffd700; text-decoration:underline; margin:0 10px;}
-
-/* ==== Hide/Show language ==== */
-.lang {display:block;}
-.lang.en {display:none;}
-
-/* ==== Responsive ==== */
-@media(max-width:768px){header h1{font-size:2.2rem;} h2{font-size:1.5rem;} .service-card{flex:1 1 100%;}}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Tajawal',sans-serif;line-height:1.6;background:#f7f7f7;color:#333;}
+.container{max-width:1200px;margin:0 auto;padding:20px;}
+header{background:linear-gradient(90deg,#d80027,#006233);color:#fff;padding:60px 20px;text-align:center;border-radius:20px;box-shadow:0 5px 15px rgba(0,0,0,0.2);position:relative;}
+header h1{font-size:3rem;margin-bottom:10px;text-shadow:2px 2px 8px #000;}
+header p{font-size:1.3rem;color:#ffd700;}
+.lang-toggle{position:absolute;top:20px;left:20px;background:#ffd700;color:#006233;border:none;padding:10px 20px;border-radius:12px;cursor:pointer;font-weight:bold;}
+section{margin:40px 0;padding:30px;background:#fff;border-radius:20px;box-shadow:0 5px 15px rgba(0,0,0,0.05);}
+h2{color:#d80027;margin-bottom:15px;border-bottom:4px solid #006233;display:inline-block;padding-bottom:5px;font-size:2rem;}
+p{font-size:1.1rem;color:#333;margin:10px 0;}
+.services{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-top:20px;}
+.service-card{flex:1 1 250px;min-width:250px;background:#f9f9f9;border-radius:15px;padding:20px;cursor:pointer;transition:0.3s;text-align:center;box-shadow:0 5px 15px rgba(0,0,0,0.05);}
+.service-card:hover{background:#e6ffe6;transform:translateY(-5px);}
+.service-card h3{font-size:1.5rem;margin-bottom:10px;}
+.service-card p{font-size:1.1rem;}
+.btn{display:inline-block;padding:15px 40px;margin:10px;border-radius:12px;font-weight:bold;text-decoration:none;transition:0.3s;}
+.btn-primary{background:#d80027;color:#fff;}
+.btn-primary:hover{background:#ff0000;transform:translateY(-3px);}
+.btn-secondary{background:#006233;color:#fff;}
+.btn-secondary:hover{background:#009944;transform:translateY(-3px);}
+.map-container iframe{width:100%;height:450px;border-radius:20px;border:none;}
+footer{text-align:center;padding:25px;background:#222;color:#ffd700;border-radius:12px;margin-top:50px;font-size:1rem;}
+footer a{color:#ffd700;text-decoration:underline;margin:0 10px;}
+.lang{display:block;}
+.lang.en{display:none;}
+@media(max-width:768px){header h1{font-size:2.2rem;}h2{font-size:1.5rem;}.service-card{flex:1 1 100%;}}
 </style>
 </head>
 <body>
 <div class="container">
 
 <header>
-  <h1 class="lang ar">كري ليا</h1>
-  <h1 class="lang en">KriLya</h1>
-  <p class="lang ar">وسيطك الموثوق في المغرب 🇲🇦 | لمسة أفريقية وعالمية</p>
-  <p class="lang en">Trusted Moroccan & African Mobility 🌍</p>
-  <button class="lang-toggle" onclick="toggleLang()">EN / AR</button>
+<h1 class="lang ar">كري ليا</h1>
+<h1 class="lang en">KriLya</h1>
+<p class="lang ar">وسيطك الموثوق في المغرب 🇲🇦 | لمسة أفريقية وعالمية</p>
+<p class="lang en">Trusted Moroccan & African Mobility 🌍</p>
+<button class="lang-toggle" onclick="toggleLang()">EN / AR</button>
 </header>
 
 <section>
-  <h2 class="lang ar">مرحبًا بكم</h2>
-  <h2 class="lang en">Welcome</h2>
-  <p class="lang ar">كري ليا خدمة وساطة بشرية مغربية 100٪ لمساعدة الزوار والمغاربة على إيجاد سيارات وشقق موثوقة خلال كأس إفريقيا وأيام التظاهرات. كل شيء يتم بالاتفاق المباشر بين الأطراف.</p>
-  <p class="lang en">KriLya is a 100% Moroccan human-based service connecting visitors with trusted cars and apartments during Africa Cup and events. All transactions are direct between parties.</p>
-  <p class="lang ar"><a href="legal.html" style="color:#d80027;font-weight:bold;text-decoration:underline;">📄 الإطار القانوني للوساطة</a></p>
-  <p class="lang en"><a href="legal.html" style="color:#d80027;font-weight:bold;text-decoration:underline;">📄 Legal Mediation Framework</a></p>
+<h2 class="lang ar">مرحبًا بكم</h2>
+<h2 class="lang en">Welcome</h2>
+<p class="lang ar">كري ليا خدمة وساطة بشرية مغربية 100٪ لمساعدة الزوار والمغاربة على إيجاد سيارات وشقق موثوقة خلال كأس إفريقيا وأيام التظاهرات. كل شيء يتم بالاتفاق المباشر بين الأطراف.</p>
+<p class="lang en">KriLya is a 100% Moroccan human-based service connecting visitors with trusted cars and apartments during Africa Cup and events. All transactions are direct between parties.</p>
+<p class="lang ar"><a href="#" style="color:#d80027;font-weight:bold;text-decoration:underline;">📄 الإطار القانوني للوساطة</a></p>
+<p class="lang en"><a href="#" style="color:#d80027;font-weight:bold;text-decoration:underline;">📄 Legal Mediation Framework</a></p>
 </section>
 
 <section>
-  <h2 class="lang ar">خدماتنا</h2>
-  <h2 class="lang en">Our Services</h2>
-  <div class="services">
-    <div class="service-card" onclick="openForm('car')">
-      <h3 class="lang ar">🚗 كراء سيارات</h3>
-      <h3 class="lang en">🚗 Car Rental</h3>
-      <p class="lang ar">اضغط لتسجيل سيارتك أو البحث عن سيارة للكراء.</p>
-      <p class="lang en">Click to register your car or find a car for rent.</p>
-    </div>
-    <div class="service-card" onclick="openForm('apartment')">
-      <h3 class="lang ar">🏠 كراء شقق</h3>
-      <h3 class="lang en">🏠 Apartment Rental</h3>
-      <p class="lang ar">سجّل شقتك أو ابحث عن شقة للإيجار بسهولة.</p>
-      <p class="lang en">Register your apartment or find one easily.</p>
-    </div>
-    <div class="service-card" onclick="openForm('driver')">
-      <h3 class="lang ar">🧑‍✈️ سائقون موثوقون</h3>
-      <h3 class="lang en">🧑‍✈️ Trusted Drivers</h3>
-      <p class="lang ar">تواصل مع سائقين محليين خلال مباريات وكؤوس إفريقيا.</p>
-      <p class="lang en">Connect with local drivers for matches and Africa Cup events.</p>
-    </div>
-  </div>
+<h2 class="lang ar">خدماتنا</h2>
+<h2 class="lang en">Our Services</h2>
+<div class="services">
+<div class="service-card" onclick="openForm('car')">
+<h3 class="lang ar">🚗 كراء سيارات</h3>
+<h3 class="lang en">🚗 Car Rental</h3>
+<p class="lang ar">اضغط لتسجيل سيارتك أو البحث عن سيارة للكراء.</p>
+<p class="lang en">Click to register your car or find a car for rent.</p>
+</div>
+<div class="service-card" onclick="openForm('apartment')">
+<h3 class="lang ar">🏠 كراء شقق</h3>
+<h3 class="lang en">🏠 Apartment Rental</h3>
+<p class="lang ar">سجّل شقتك أو ابحث عن شقة للإيجار بسهولة.</p>
+<p class="lang en">Register your apartment or find one easily.</p>
+</div>
+<div class="service-card" onclick="openForm('driver')">
+<h3 class="lang ar">🧑‍✈️ سائقون موثوقون</h3>
+<h3 class="lang en">🧑‍✈️ Trusted Drivers</h3>
+<p class="lang ar">تواصل مع سائقين محليين خلال مباريات وكؤوس إفريقيا.</p>
+<p class="lang en">Connect with local drivers for matches and Africa Cup events.</p>
+</div>
+</div>
 </section>
 
 <section>
-  <h2 class="lang ar">المدن والملاعب</h2>
-  <h2 class="lang en">Cities & Stadiums</h2>
-  <div class="map-container">
-    <iframe src="https://youtu.be/OJQJ3IkATGc?si=3HTSiT5pdK_DWDei" allowfullscreen></iframe>
-  </div>
+<h2 class="lang ar">المدن والملاعب</h2>
+<h2 class="lang en">Cities & Stadiums</h2>
+<div class="map-container">
+<iframe src="https://maps.google.com/maps?q=Casablanca,Maroc&output=embed"></iframe>
+</div>
 </section>
 
 <section>
-  <h2 class="lang ar">أماكن سياحية موصى بها</h2>
-  <h2 class="lang en">Recommended Tourist Places</h2>
-  <p class="lang ar">مراكش، فاس، الدار البيضاء، شفشاون، الصويرة وغيرها – اكتشفوا المغرب خلال زيارتكم!</p>
-  <p class="lang en">Marrakech, Fes, Casablanca, Chefchaouen, Essaouira and more – explore Morocco during your visit!</p>
+<h2 class="lang ar">أماكن سياحية موصى بها</h2>
+<h2 class="lang en">Recommended Tourist Places</h2>
+<p class="lang ar">مراكش، فاس، الدار البيضاء، شفشاون، الصويرة وغيرها – اكتشفوا المغرب خلال زيارتكم!</p>
+<p class="lang en">Marrakech, Fes, Casablanca, Chefchaouen, Essaouira and more – explore Morocco during your visit!</p>
 </section>
 
 <div style="text-align:center;">
-  <a href="contact.html" class="btn btn-primary"><span class="lang ar">تواصل معنا</span><span class="lang en">Contact Us</span></a>
-  <a href="about.html" class="btn btn-secondary"><span class="lang ar">من نحن</span><span class="lang en">About Us</span></a>
+<a href="#" class="btn btn-primary"><span class="lang ar">تواصل معنا</span><span class="lang en">Contact Us</span></a>
+<a href="#" class="btn btn-secondary"><span class="lang ar">من نحن</span><span class="lang en">About Us</span></a>
 </div>
 
 <footer>
-  <span class="lang ar">© 2025 كري ليا — جميع الحقوق محفوظة | الوساطة البشرية فقط، لا نقل أو حجز إلزامي</span>
-  <span class="lang en">© 2025 KriLya — All rights reserved | Human mediation only, no transport or mandatory booking</span>
+<span class="lang ar">© 2025 كري ليا — جميع الحقوق محفوظة | الوساطة البشرية فقط، لا نقل أو حجز إلزامي</span>
+<span class="lang en">© 2025 KriLya — All rights reserved | Human mediation only, no transport or mandatory booking</span>
 </footer>
 
 </div>
 
 <script>
 function openForm(service){
-  let url = '';
-  if(service==='car') url='https://forms.gle/YourCarFormLink';
-  else if(service==='apartment') url='https://forms.gle/YourApartmentFormLink';
-  else if(service==='driver') url='https://forms.gle/YourDriverFormLink';
-  window.open(url,'_blank');
+  alert('هذه نسخة تجريبية، سيتم ربط الخدمة بنموذج Google Sheets لاحقاً: ' + service);
 }
-
 function toggleLang(){
-  const arabic = document.querySelectorAll('.lang.ar');
-  const english = document.querySelectorAll('.lang.en');
-  arabic.forEach(el => el.style.display = (el.style.display==='none' ? 'block' : 'none'));
-  english.forEach(el => el.style.display = (el.style.display==='none' ? 'block' : 'none'));
+  const arabic=document.querySelectorAll('.lang.ar');
+  const english=document.querySelectorAll('.lang.en');
+  arabic.forEach(el=>el.style.display=(el.style.display==='none'?'block':'none'));
+  english.forEach(el=>el.style.display=(el.style.display==='none'?'block':'none'));
 }
-
 // Auto detect browser language
 if(!navigator.language.startsWith('ar')) toggleLang();
 </script>
 
 </body>
-  </html>
+                                                                       </html>
